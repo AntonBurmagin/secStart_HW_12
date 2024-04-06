@@ -1,4 +1,10 @@
 #include <iostream>
+#include <cassert>
+
+float travelTime (float distance, float speed) {
+    assert(distance >= 0 && speed > 0);
+    return distance / speed;
+}
 
 int main() {
     //lesson 12.5.1
@@ -46,9 +52,16 @@ int main() {
     // 1.2 -1 15.8 9.4 8.1 -7.3 6.4 18 10 11.155
     
    //lesson 12.5.3
+    while (true) {
+        float distance, speed;
+        std::cout << "Input distance and speed:" << std::endl;
+        std::cin >> distance >> speed;
+        std::cout << "Travel time: " << travelTime(distance, speed) << std::endl;;
+    }
+    
 
-
-   //lesson 12.5.4 
+   //lesson 12.5.4
+   /*
    int numbers[15] = {114, 111, 106, 107, 108, 105, 115, 108, 110, 109, 112, 113, 116, 117, 118};
    int min = numbers[0];
    int repeatNumber;
@@ -57,8 +70,8 @@ int main() {
         sum += numbers[i];
         if (min > numbers[i]) min = numbers[i];
    }
-   repeatNumber = sum - min * 14 - 13 * 7;
+   repeatNumber = sum - min * 14 - 13 * 7; // 13 * 7  is the sum of (numbers[i] + numbers[size-i] - 2*min) if the array is sorted
    std::cout << "X (starting number): " << min << ", repeating number: " << repeatNumber << std::endl;
-
+    */ 
 
 }
